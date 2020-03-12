@@ -1,7 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+// import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import Person from './components/Person';
+import Lonely from './components/Lonely';
+import data from './data.json';
 
+
+const App = () => {
+  const [people, setPeople] = useState(data);
+  const [likedUsers, setLikedUsers] = useState([]);
+  const [superLikedUsers, setSuperLikedUsers] = useState([]);
+  const [dislikedUsers, setDislikedPeople] = useState([]);
+  const activeUser = 0;
+
+  switch (action) {
+    case 'ADD_TO_LIKED_USER':
+      break;
+    case 'ADD_TO_DISLIKED_USER':
+      break;
+    case 'ADD_TO_SUPERLIKED_USER':
+
+    default:
+      return people;
+  }
+
+  return (
+    <div className="app">
+      <Header />
+      <p>Finder!</p>
+    </div>
+  )
+}
+/*
 function App() {
   return (
     <div className="App">
@@ -22,5 +53,5 @@ function App() {
     </div>
   );
 }
-
+*/
 export default App;
