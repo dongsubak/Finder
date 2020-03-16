@@ -29,6 +29,21 @@ const App = () => {
     <div className="app">
       <Header />
       <p>Finder!</p>
+      {people[1] ? (
+        <Person
+          key={person[1].id}
+          person={person[1]}
+          modifySuperficialChoices={modifySuperficialChoices}
+          likedUsers={likedUsers}
+        />
+      ): (
+        <Lonely
+          activeUserImage={people[activeUser].image}
+          likedUsers={likedUsers}
+          superLikedUsers={superLikedUsers}
+        />
+      )
+    }
     </div>
   )
 }
