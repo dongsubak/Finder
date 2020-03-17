@@ -13,6 +13,9 @@ const App = () => {
   const [superLikedUsers, setSuperLikedUsers] = useState([]);
   const [dislikedUsers, setDislikedUsers] = useState([]);
   const activeUser = 0;
+  
+  const removedPersonFromDataSrc = (people, userId) => 
+    people.filter(person => person.id !== userId);
 
   const modifySuperficialChoices = (userId, action) => {
     const newPeople = [...people];
@@ -20,8 +23,6 @@ const App = () => {
     const newSuperlikedUsers = [...superLikedUsers];
     const newDislikedUsers = [...dislikedUsers];
 
-    const removedPersonFromDataSrc = (people, userId) => 
-      people.filter(person => person.id !== userId);
 
     switch (action) {
       case 'ADD_TO_LIKED_USER':
@@ -51,7 +52,7 @@ const App = () => {
       default:
         return people;
     }
-  }
+  };
 
   return (
     <div className="app">
@@ -64,7 +65,7 @@ const App = () => {
           modifySuperficialChoices={modifySuperficialChoices}
           likedUsers={likedUsers}
         />
-      ): (
+      ) : (
         <Lonely
           activeUserImage={people[activeUser].image}
           likedUsers={likedUsers}
@@ -72,28 +73,8 @@ const App = () => {
         />
       )}
     </div>
-  )
-}
-/*
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
   );
-}
-*/
+};
+
 export default App;
+
