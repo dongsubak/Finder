@@ -42,8 +42,7 @@ const App = () => {
           likedUsers={likedUsers}
           superLikedUsers={superLikedUsers}
         />
-      )
-    }
+      )}
     </div>
   )
 }
