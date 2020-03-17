@@ -11,15 +11,15 @@ const Actions = ({person, modifySuperficialChoices}) => {
         <Rewind userId={person.id} />
         <Dislike 
             userId={person.id} 
-            modifySuperificialChoices={modifySuperficialChoices}
+            modifySuperficialChoices={modifySuperficialChoices}
         />
         <Like 
             userId={person.id} 
-            modifySuperificialChoices={modifySuperficialChoices}
+            modifySuperficialChoices={modifySuperficialChoices}
         />
         <Superlike 
             userId={person.id} 
-            modifySuperificialChoices={modifySuperficialChoices}
+            modifySuperficialChoices={modifySuperficialChoices}
         />
     </div>
 }
