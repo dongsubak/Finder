@@ -29,7 +29,7 @@ const App = () => {
           newPeople[activeUser].likedUsers.push(userId);
 
           setLikedUsers(newLikedUsers);
-          setPeople(removedPersonFromDataSrc(people, userid));
+          setPeople(removedPersonFromDataSrc(people, userId));
         }
         break;
       case 'ADD_TO_DISLIKED_USER':
@@ -37,7 +37,7 @@ const App = () => {
           newPeople[activeUser].dislikedUsers.push(userId);
 
           setDislikedUsers(newDislikedUsers);
-          setPeople(removedPersonFromDataSrc(people, userid));
+          setPeople(removedPersonFromDataSrc(people, userId));
         }
         break;
       case 'ADD_TO_SUPERLIKED_USER':
@@ -45,7 +45,7 @@ const App = () => {
           newPeople[activeUser].superLikedUsers.push(userId);
 
           setSuperLikedUsers(newSuperlikedUsers);
-          setPeople(removedPersonFromDataSrc(people, userid));
+          setPeople(removedPersonFromDataSrc(people, userId));
         }
         break;
       default:
