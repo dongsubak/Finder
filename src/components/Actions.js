@@ -4,7 +4,7 @@ import Dislike from './actions/Dislike';
 import Like from './actions/Like';
 import Superlike from './actions/Superlike';
 
-const Actions = ({person, modifySuperficialChoices}) => {
+const Actions = ({person, modifySuperficialChoices}) => (
     <div id="actions">
         <Rewind userId={person.id} />
         <Dislike 
@@ -20,6 +20,6 @@ const Actions = ({person, modifySuperficialChoices}) => {
             modifySuperficialChoices={modifySuperficialChoices}
         />
     </div>
-}
+)
 
-export default Action;
+export default Actions;
