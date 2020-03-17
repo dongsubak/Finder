@@ -4,8 +4,6 @@ import Dislike from './actions/Dislike';
 import Like from './actions/Like';
 import Superlike from './actions/Superlike';
 
-
-
 const Actions = ({person, modifySuperficialChoices}) => {
     <div id="actions">
         <Rewind userId={person.id} />

@@ -11,18 +11,46 @@ const App = () => {
   const [people, setPeople] = useState(data);
   const [likedUsers, setLikedUsers] = useState([]);
   const [superLikedUsers, setSuperLikedUsers] = useState([]);
-  const [dislikedUsers, setDislikedPeople] = useState([]);
+  const [dislikedUsers, setDislikedUsers] = useState([]);
   const activeUser = 0;
 
-  switch (action) {
-    case 'ADD_TO_LIKED_USER':
-      break;
-    case 'ADD_TO_DISLIKED_USER':
-      break;
-    case 'ADD_TO_SUPERLIKED_USER':
+  const modifySuperficialChoices = (userId, action) => {
+    const newPeople = [...people];
+    const newLikedUsers = [...likedUsers];
+    const newSuperlikedUsers = [...superLikedUsers];
+    const newDislikedUsers = [...dislikedUsers];
 
-    default:
-      return people;
+    const removedPersonFromDataSrc = (people, userId) => 
+      people.filter(person => person.id !== userId);
+
+    switch (action) {
+      case 'ADD_TO_LIKED_USER':
+        if (!people[activeUser].likedUsers.includes(userId)) {
+          newPeople[activeUser].likedUsers.push(userId);
+
+          setLikedUsers(newLikedUsers);
+          setPeople(removedPersonFromDataSrc(people, userid));
+        }
+        break;
+      case 'ADD_TO_DISLIKED_USER':
+        if (!people[activeUser].dislikedUsers.includes(userId)) {
+          newPeople[activeUser].dislikedUsers.push(userId);
+
+          setDislikedUsers(newDislikedUsers);
+          setPeople(removedPersonFromDataSrc(people, userid));
+        }
+        break;
+      case 'ADD_TO_SUPERLIKED_USER':
+        if (!people[activeUser].superLikedUsers.includes(userId)) {
+          newPeople[activeUser].superLikedUsers.push(userId);
+
+          setSuperLikedUsers(newSuperlikedUsers);
+          setPeople(removedPersonFromDataSrc(people, userid));
+        }
+        break;
+      default:
+        return people;
+    }
   }
 
   return (
@@ -31,8 +59,8 @@ const App = () => {
       <p>Finder!</p>
       {people[1] ? (
         <Person
-          key={person[1].id}
-          person={person[1]}
+          key={people[1].id}
+          person={people[1]}
           modifySuperficialChoices={modifySuperficialChoices}
           likedUsers={likedUsers}
         />
