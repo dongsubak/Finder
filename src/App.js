@@ -14,8 +14,8 @@ const App = () => {
   const [dislikedUsers, setDislikedUsers] = useState([]);
   const activeUser = 0;
   
-  const removedPersonFromDataSrc = (people, userId) => 
-    people.filter(person => person.id !== userId);
+  const removedPersonFromDataSrc = (peopleSource, userId) => 
+    peopleSource.filter(user => user.id !== userId);
 
   const modifySuperficialChoices = (userId, action) => {
     const newPeople = [...people];
@@ -36,6 +36,7 @@ const App = () => {
       case 'ADD_TO_DISLIKED_USER':
         if (!people[activeUser].dislikedUsers.includes(userId)) {
           newPeople[activeUser].dislikedUsers.push(userId);
+          newDislikedUsers.push(data[userId]);
 
           setDislikedUsers(newDislikedUsers);
           setPeople(removedPersonFromDataSrc(people, userId));
@@ -44,6 +45,7 @@ const App = () => {
       case 'ADD_TO_SUPERLIKED_USER':
         if (!people[activeUser].superLikedUsers.includes(userId)) {
           newPeople[activeUser].superLikedUsers.push(userId);
+          newSuperlikedUsers.push(data[userId]);
 
           setSuperLikedUsers(newSuperlikedUsers);
           setPeople(removedPersonFromDataSrc(people, userId));
