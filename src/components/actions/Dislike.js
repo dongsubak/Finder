@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Dislike = ({person, modifySuperficialChoices}) => (
+const Dislike = ({userId, modifySuperficialChoices}) => (
     <button 
         type="button"
         onClick={() => modifySuperficialChoices(userId, 'ADD_TO_DISLIKED_USER')}
