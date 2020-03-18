@@ -25,15 +25,16 @@ const App = () => {
 
 
     switch (action) {
-      case 'ADD_TO_LIKED_USER':
+      case 'ADD_TO_LIKED_USERS':
         if (!people[activeUser].likedUsers.includes(userId)) {
           newPeople[activeUser].likedUsers.push(userId);
+          newLikedUsers.push(data[userId]);
 
           setLikedUsers(newLikedUsers);
           setPeople(removedPersonFromDataSrc(people, userId));
         }
         break;
-      case 'ADD_TO_DISLIKED_USER':
+      case 'ADD_TO_DISLIKED_USERS':
         if (!people[activeUser].dislikedUsers.includes(userId)) {
           newPeople[activeUser].dislikedUsers.push(userId);
           newDislikedUsers.push(data[userId]);
@@ -42,7 +43,7 @@ const App = () => {
           setPeople(removedPersonFromDataSrc(people, userId));
         }
         break;
-      case 'ADD_TO_SUPERLIKED_USER':
+      case 'ADD_TO_SUPERLIKED_USERS':
         if (!people[activeUser].superLikedUsers.includes(userId)) {
           newPeople[activeUser].superLikedUsers.push(userId);
           newSuperlikedUsers.push(data[userId]);
