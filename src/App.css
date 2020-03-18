@@ -1,5 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  line-height: 1;
+  background-color: #f7f7f7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ol, ul {
+  list-style: none;
+}
+
 .App {
   text-align: center;
+  max-width: 500px;
+  margin: auto;
+}
+
+header {
+  background-color: white;
+  overflow: hidden;
+  display: flex;
+}
+
+header {
+  background-color: transparent;
+  border: 0;
+  width: 50px;
+  cursor: pointer;
+}
+
+header button img {
+  width: 100%;
+}
+
+header .fl {
+  float: left;
 }
 
 .App-logo {
